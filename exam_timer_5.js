@@ -7,7 +7,7 @@ $(document).ready(function () {
     let scheduledStart = null;
     let extraTimeEnabled = false;
     let scheduledInterval = null;
-    let examtime, readingtime, examtitle, readingflag;
+    let examtime, extraexamtime, readingtime, examtitle, readingflag;
     
     const clock_options = {
         format: '%I:%M %p', // 12-hour with am/pm
@@ -40,9 +40,8 @@ $(document).ready(function () {
                 milliseconds: 0
             });
             
-            // If time has already passed today, set for tomorrow
             if (scheduledStart.isBefore(moment())) {
-                scheduledStart.add(1, 'day');
+                scheduledStart = null;
             }
         } else {
             scheduledStart = null;
@@ -51,7 +50,7 @@ $(document).ready(function () {
         // Calculate exam time with extra time if enabled
         examtime = examhours * 60 * 60 + examminutes * 60;
         if (extraTimeEnabled) {
-            examtime = Math.floor(examtime * 1.25);
+            extraexamtime = Math.floor(examtime * 1.25);
         }
         
         readingtime = readingminutes * 60;
