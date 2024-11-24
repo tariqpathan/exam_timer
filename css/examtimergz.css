@@ -1,0 +1,44 @@
+.navbar {
+margin-bottom: 0 !important;
+}
+#site {
+margin-top: 0 !important;
+}
+.smalltext {font-size: 40px;line-height: 1.2em;}
+.mediumtext {font-size: 70px;line-height: 1.2em;}
+.largetext {font-size: 120px;line-height: 1.4em;}
+.tiny {font-size: 50%;}
+.well {
+	text-align: center;
+}
+.footercontainer {
+	text-align: center;
+	color: #666;
+}
+.footercontainer a {
+	color: #666;
+}
+#remainingTime {
+	color: white;
+	min-height: 200px;
+}
+#start-time-div {
+	color: #aaa;
+}
+#start-time-div h2 {
+	color: #A8FFB4;
+}
+#fin-time-div {
+	color: #ccc;
+}
+#fin-time-div h2 {
+	color: #FFA8EF;
+}
+.jclock {color: #eee}
+h1 {text-align: center}
+h1 small {text-align: left}
+.modal-body .alert {
+	color: white;
+}
+h2 a {color: white;}
+.footer a {color: white;}

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Exam Timer - MathsStarters</title>
+	<meta name="description" content="Exam timer with optional reading time. Shows current, start and finish times. A countdown set in hours and minutes.">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Simon Job">
+  <meta name="adapted_by" content="Tariq Pathan">
+    
+	<link href="./css/bootstrap151016.min.css" rel="stylesheet" charset="utf-8">
+	<link href="./css/darkstrap01gz.css" rel="stylesheet" charset="utf-8">
+	<link href="./css/examtimergz.css" rel="stylesheet" charset="utf-8">
+  
+	<script src="./jquery-1.8.3.min.js"></script>
+	<script src="./jquery-ui.min.js"></script>  
+	<script src="./bootstrap.min.js"></script>
+	<script src="./jquery.jclockgz.js"></script>
+	<script src="./moment.min.js"></script>
+  <script src="./exam_timer_5.js"></script>
+</head>
+
+<body id="mathsstarters-offline">
+
+
+<div class="container mainContent">
+
+
+<div class="row">
+<div class="span12">
+		<h1><small>Exam Timer</small></h1>        
+<div id="controls" class="collapse in">
+<div class="btn-group">
+  <button class="btn btn-success hide" id="buttonStart"><i class="icon-play icon-white"></i> Start</button>
+  <button class="btn btn-primary hide disabled" id="buttonPause"><i class="icon-pause icon-white"></i> Pause</button>  
+</div>
+<div class="btn-group">
+  <button class="btn" data-toggle="modal" data-target="#setup" id="buttonSetup">Setup</button>
+  <button class="btn btn-inverse disabled" id="buttonReset">Reset</button>
+</div>
+</div>
+<hr>
+ 
+
+<h1 id="exam-title"></h1>
+<div class="row">
+		<div class="span4" id="clock"><h2>Current</h2><div class="jclock mediumtext"></div></div>
+		<div class="span4 hide" id="start-time-div"><h2>Start</h2><div id="start-time" class="mediumtext"></div></div>
+		<div class="span4 hide" id="fin-time-div"><h2>Finish</h2><div id="fin-time" class="mediumtext"></div></div>		
+</div>
+		
+	<h2 id="stage_title"></h2>
+    <div id="remainingTime" class="well">
+    		<span id="remain_hours" class="well largetext timebox"></span> <span id="remain_min" class="well largetext timebox"></span> <span id="remain_sec" class="well largetext timebox"></span>
+    </div>
+</div><!--/span8-->
+</div><!--/row-->
+
+<!-- Modal -->
+<div id="setup" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="setupLabel" aria-hidden="true">
+  <div class="modal-header">
+    <h3 id="setupLabel">Exam Timer</h3>
+  </div>
+  <div class="modal-body">
+	  <form name="setupform" method="post" action="" class="form-inline ">
+		<h4>Setup</h4>
+        <p>
+        <label for="exam-title-entry">Exam title (optional)
+	      <input name="exam-title-entry" type="text" id="exam-title-entry" maxlength="128" class="span4" placeholder="exam title">
+        </label>
+        </p>
+		<p>Length of exam
+	    <label for="examtime_hours">hours
+	      <input name="examtime_hours" type="number" id="examtime_hours" value="1" maxlength="2" min="0" max="24" class="span1">
+        </label>
+        and
+	    <label for="examtime_minutes">minutes
+	      <input name="examtime_minutes" type="number" id="examtime_minutes" value="0" maxlength="2" min="0" max="59" class="span1">
+        </label>
+    </p>
+    <p>Reading time (optional) in
+	    <label for="readingtime_minutes">minutes
+	      <input name="readingtime_minutes" type="number" id="readingtime_minutes" value="0" maxlength="2" min="0" max="59" class="span1">
+        </label>
+    </p>     
+    <div class="scheduled-start-section">
+      <h4>Scheduled Start Time (optional)</h4>
+      <div class="scheduled-time-inputs">
+          <input type="time" id="scheduled-time" class="form-control">
+      </div>
+      <span class="help-block">Leave empty to start immediately</span>
+  </div>
+  <div class="extra-time-section mt-3">
+      <label class="checkbox">
+          <input type="checkbox" id="extra-time-toggle"> Enable 25% Extra Time
+      </label>
+  </div>
+      
+		<label class="checkbox">
+        	<input name="showseconds" id="showseconds" type="checkbox"> Always display seconds
+      	</label>
+		<span class="help-block"><small>By default, the seconds display is hidden after a short period of time. Check to disable this.</small></span>
+      </form>
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true" id="modal-close-button">Close</button>
+  </div>
+</div>
+
+
+<div class="navbar navbar-fixed-bottom">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+    </div>
+  </div>
+</div>
+
+
+</div><!--/.container-->
+
+<div class="container footer">
+    <footer>
+		<div class="footercontainer">
+      		<p>Unique Sixth Form Internal Use ONLY</p>
+		</div>
+    </footer>
+</div>
+</body>
+</html>
